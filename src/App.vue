@@ -265,10 +265,10 @@ import { ref } from "vue";
 import daveImage from "@/IMG/dave1.jpg";
 import amazonImg from "@/IMG/amazon.jpg";
 import taskManagementImg from "@/IMG/TMS.png";
-import dave2 from "@/IMG/dave2.jpg";
-import dave3 from "@/IMG/dave3.jpg";
-import dave4 from "@/IMG/dave1.jpg";
-import law2 from "@/IMG/law2.jpg";
+import dave2 from "@/IMG/billy.jpg";
+import dave3 from "@/IMG/andre1.jpg";
+import dave4 from "@/IMG/kurt1.jpg";
+import law2 from "@/IMG/aedrian1.jpg";
 
 const drawer = ref(false);
 
