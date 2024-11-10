@@ -40,7 +40,7 @@
       <v-container
         fluid
         id="home"
-        class="section-intro"
+        class="section section-intro hidden"
         style="background-color: #ffe4e1; min-height: 100vh"
       >
         <v-row align="center" justify="center" style="min-height: 100vh">
@@ -66,7 +66,7 @@
       </v-container>
 
       <!-- Skills Section -->
-      <v-container id="skills" class="py-12 my-12">
+      <v-container id="skills" ref="skills" class="section hidden py-12 my-12">
         <h2
           class="text-h3 mb-6 text-center font-weight-bold pt-12"
           style="color: #333"
@@ -107,7 +107,11 @@
       </v-container>
 
       <!-- Testimonials Section -->
-      <v-container id="testimonials" class="py-12 testimonial-section">
+      <v-container
+        ref="testimonials"
+        id="testimonials"
+        class="py-12 testimonial-section section hidden"
+      >
         <h2
           class="text-h3 mb-6 text-center font-weight-bold"
           style="color: #333"
@@ -145,8 +149,9 @@
 
       <!-- Projects Section -->
       <v-container
+        ref="projects"
         id="projects"
-        class="py-12"
+        class="py-12 section hidden"
         style="background-color: #fdf5e6"
       >
         <h2
@@ -202,7 +207,7 @@
       </v-container>
 
       <!-- Contact Section -->
-      <v-container id="contact" class="py-12">
+      <v-container ref="contact" id="contact" class="py-12 section hidden">
         <h2
           class="text-h3 mb-6 text-center font-weight-bold"
           style="color: #333"
@@ -354,6 +359,28 @@ const projects = [
     technologies: ["Vue.js", "Vuetify", "Node.js", "MongoDB"],
   },
 ];
+
+import { onMounted } from "vue";
+
+onMounted(() => {
+  const sections = document.querySelectorAll(".section");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("fade-in");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
+});
 </script>
 
 <style scoped>
@@ -405,5 +432,37 @@ const projects = [
 .testimonial-container {
   scrollbar-width: thin;
   scrollbar-color: #ffa07a #ffe4e1;
+}
+
+/* Transition */
+.section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Additional transitions */
+.section.slide-in-left {
+  transform: translateX(-30px);
+}
+
+.section.slide-in-right {
+  transform: translateX(30px);
+}
+
+/* Use unique transition styles if desired */
+#skills.fade-in {
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateX(0);
+}
+
+#projects.fade-in {
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(-30px);
 }
 </style>
