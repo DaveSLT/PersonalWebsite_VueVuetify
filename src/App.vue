@@ -265,10 +265,10 @@ import { ref } from "vue";
 import daveImage from "@/IMG/dave1.jpg";
 import amazonImg from "@/IMG/amazon.jpg";
 import taskManagementImg from "@/IMG/TMS.png";
-import dave2 from "@/IMG/billy.jpg";
-import dave3 from "@/IMG/andre1.jpg";
-import dave4 from "@/IMG/kurt1.jpg";
-import law2 from "@/IMG/aedrian1.jpg";
+import billy1 from "@/IMG/billy1.jpg";
+import andre1 from "@/IMG/andre1.jpg";
+import kurt1 from "@/IMG/kurt1.jpg";
+import aedrian1 from "@/IMG/aedrian1.jpg";
 
 const drawer = ref(false);
 
@@ -315,24 +315,24 @@ const skills = [
 
 const testimonials = ref([
   {
-    name: "Jason Bulan",
+    name: "Billy Terante",
     feedback: "Dave's work is outstanding!",
-    avatar: dave2,
+    avatar: billy1,
   },
   {
-    name: "Dave Jason",
+    name: "Andre Salvador",
     feedback: "Highly skilled developer and team player.",
-    avatar: dave3,
+    avatar: andre1,
   },
   {
-    name: "Alice Johnson",
+    name: "kurt Reserva",
     feedback: "Exceptional problem-solving skills and attention to detail.",
-    avatar: dave4,
+    avatar: kurt1,
   },
   {
-    name: "Lawrence Sabrido",
+    name: "Aedrian Puspus",
     feedback: "Dave consistently delivers high-quality code on time.",
-    avatar: law2,
+    avatar: aedrian1,
   },
 ]);
 
