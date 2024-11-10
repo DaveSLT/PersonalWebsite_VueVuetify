@@ -107,45 +107,6 @@
       </v-container>
 
       <!-- Testimonials Section -->
-      <v-container
-        ref="testimonials"
-        id="testimonials"
-        class="py-12 testimonial-section section hidden"
-      >
-        <h2
-          class="text-h3 mb-6 text-center font-weight-bold"
-          style="color: #333"
-        >
-          Testimonials
-        </h2>
-        <v-row class="testimonial-container">
-          <v-col
-            v-for="testimonial in testimonials"
-            :key="testimonial.name"
-            cols="12"
-            md="6"
-          >
-            <v-card elevation="4" class="testimonial-card">
-              <v-card-text>
-                <v-row no-gutters align="center" class="mb-4">
-                  <v-avatar size="48" class="mr-4">
-                    <v-img
-                      :src="testimonial.avatar"
-                      :alt="testimonial.name"
-                    ></v-img>
-                  </v-avatar>
-                  <v-card-title class="text-h6 pa-0">{{
-                    testimonial.name
-                  }}</v-card-title>
-                </v-row>
-                <v-card-text class="text-body-1 font-italic">
-                  "{{ testimonial.feedback }}"
-                </v-card-text>
-              </v-card-text>
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-container>
 
       <!-- Projects Section -->
       <v-container
@@ -270,10 +231,10 @@ import { ref } from "vue";
 import daveImage from "@/IMG/dave1.jpg";
 import amazonImg from "@/IMG/amazon.jpg";
 import taskManagementImg from "@/IMG/TMS.png";
-import billy1 from "@/IMG/billy1.jpg";
-import andre1 from "@/IMG/andre1.jpg";
-import kurt1 from "@/IMG/kurt1.jpg";
-import aedrian1 from "@/IMG/aedrian1.jpg";
+// import billy1 from "@/IMG/billy1.jpg";
+// import andre1 from "@/IMG/andre1.jpg";
+// import kurt1 from "@/IMG/kurt1.jpg";
+// import aedrian1 from "@/IMG/aedrian1.jpg";
 
 const drawer = ref(false);
 
@@ -318,28 +279,28 @@ const skills = [
   },
 ];
 
-const testimonials = ref([
-  {
-    name: "Billy Terante",
-    feedback: "Dave's work is outstanding!",
-    avatar: billy1,
-  },
-  {
-    name: "Andre Salvador",
-    feedback: "Highly skilled developer and team player.",
-    avatar: andre1,
-  },
-  {
-    name: "kurt Reserva",
-    feedback: "Exceptional problem-solving skills and attention to detail.",
-    avatar: kurt1,
-  },
-  {
-    name: "Aedrian Puspus",
-    feedback: "Dave consistently delivers high-quality code on time.",
-    avatar: aedrian1,
-  },
-]);
+// const testimonials = ref([
+//   {
+//     name: "Billy Terante",
+//     feedback: "Dave's work is outstanding!",
+//     avatar: billy1,
+//   },
+//   {
+//     name: "Andre Salvador",
+//     feedback: "Highly skilled developer and team player.",
+//     avatar: andre1,
+//   },
+//   {
+//     name: "kurt Reserva",
+//     feedback: "Exceptional problem-solving skills and attention to detail.",
+//     avatar: kurt1,
+//   },
+//   {
+//     name: "Aedrian Puspus",
+//     feedback: "Dave consistently delivers high-quality code on time.",
+//     avatar: aedrian1,
+//   },
+// ]);
 
 const projects = [
   {
