@@ -6,9 +6,7 @@
         @click="drawer = !drawer"
         class="d-flex d-sm-none"
       ></v-app-bar-nav-icon>
-      <v-app-bar-title class="text-h5 font-weight-bold"
-        >Dave Salte</v-app-bar-title
-      >
+      <v-app-bar-title class="text-h5 font-weight-bold">Dave Salte</v-app-bar-title>
       <v-spacer></v-spacer>
       <v-btn
         v-for="item in menuItems"
@@ -45,13 +43,24 @@
       >
         <v-row align="center" justify="center" style="min-height: 100vh">
           <v-col cols="12" md="8" class="text-center">
-            <v-avatar size="200" class="mb-4">
+            <v-avatar size="200" class="mb-4 float-animation">
               <v-img :src="daveImage" alt="Dave Jason B. Salte"></v-img>
             </v-avatar>
             <h1 class="text-h2 font-weight-bold mb-4" style="color: #333">
               Dave Jason B. Salte
             </h1>
-            <p class="text-h5 mb-6" style="color: #666">Full Stack Developer</p>
+            <span
+              class="text-h5 typing"
+              style="
+                color: #666;
+                margin-top: 20px;
+                height: 20px;
+                width: 100%;
+                margin-bottom: 30px;
+              "
+            ></span>
+            <br />
+
             <v-btn
               size="x-large"
               color="gold"
@@ -68,27 +77,22 @@
       <!-- Skills Section -->
       <v-container id="skills" class="py-12 my-12">
         <h2
-          class="text-h3 mb-6 text-center font-weight-bold pt-12"
+          class="techt text-h3 mb-6 text-center font-weight-bold pt-12"
           style="color: #333"
         >
           Technical Expertise
         </h2>
         <v-row>
-          <v-col
-            v-for="skill in skills"
-            :key="skill.name"
-            cols="12"
-            sm="6"
-            md="4"
-          >
+          <v-col v-for="skill in skills" :key="skill.name" cols="12" sm="6" md="4">
             <v-hover v-slot="{ isHovering, props }">
               <v-card
                 v-bind="props"
                 :elevation="isHovering ? 8 : 2"
                 :class="{ 'on-hover': isHovering }"
                 height="100%"
+                class="wow"
               >
-                <v-card-title class="text-h5">
+                <v-card-title class="text-h5 techmagic">
                   <v-icon
                     :icon="skill.icon"
                     size="large"
@@ -97,7 +101,7 @@
                   ></v-icon>
                   {{ skill.name }}
                 </v-card-title>
-                <v-card-text class="text-body-1">{{
+                <v-card-text class="text-body-1 techmagic1">{{
                   skill.description
                 }}</v-card-text>
               </v-card>
@@ -109,7 +113,7 @@
       <!-- Testimonials Section -->
       <v-container id="testimonials" class="py-12 testimonial-section">
         <h2
-          class="text-h3 mb-6 text-center font-weight-bold"
+          class="text-h3 mb-6 text-center font-weight-bold testimonial"
           style="color: #333"
         >
           Testimonials
@@ -123,18 +127,13 @@
           >
             <v-card elevation="4" class="testimonial-card">
               <v-card-text>
-                <v-row no-gutters align="center" class="mb-4">
+                <v-row no-gutters align="center" class="mb-4 testimonial-head">
                   <v-avatar size="48" class="mr-4">
-                    <v-img
-                      :src="testimonial.avatar"
-                      :alt="testimonial.name"
-                    ></v-img>
+                    <v-img :src="testimonial.avatar" :alt="testimonial.name"></v-img>
                   </v-avatar>
-                  <v-card-title class="text-h6 pa-0">{{
-                    testimonial.name
-                  }}</v-card-title>
+                  <v-card-title class="text-h6 pa-0">{{ testimonial.name }}</v-card-title>
                 </v-row>
-                <v-card-text class="text-body-1 font-italic">
+                <v-card-text class="text-body-1 font-italic testimonial-feedback">
                   "{{ testimonial.feedback }}"
                 </v-card-text>
               </v-card-text>
@@ -144,35 +143,17 @@
       </v-container>
 
       <!-- Projects Section -->
-      <v-container
-        id="projects"
-        class="py-12"
-        style="background-color: #fdf5e6"
-      >
-        <h2
-          class="text-h3 mb-6 text-center font-weight-bold mt-8"
-          style="color: #333"
-        >
+      <v-container id="projects" class="py-12" style="background-color: #fdf5e6">
+        <h2 class="text-h3 mb-6 text-center font-weight-bold mt-8" style="color: #333">
           Featured Projects
         </h2>
         <v-row>
-          <v-col
-            v-for="project in projects"
-            :key="project.title"
-            cols="12"
-            md="6"
-          >
+          <v-col v-for="project in projects" :key="project.title" cols="12" md="6">
             <v-hover v-slot="{ isHovering, props }">
-              <v-card
-                v-bind="props"
-                :elevation="isHovering ? 12 : 2"
-                height="100%"
-              >
+              <v-card v-bind="props" :elevation="isHovering ? 12 : 2" height="100%">
                 <v-img :src="project.image" height="250" cover></v-img>
                 <v-card-title class="text-h5">{{ project.title }}</v-card-title>
-                <v-card-text class="text-body-1">{{
-                  project.description
-                }}</v-card-text>
+                <v-card-text class="text-body-1">{{ project.description }}</v-card-text>
                 <v-card-text>
                   <v-chip
                     v-for="tech in project.technologies"
@@ -203,10 +184,7 @@
 
       <!-- Contact Section -->
       <v-container id="contact" class="py-12">
-        <h2
-          class="text-h3 mb-6 text-center font-weight-bold"
-          style="color: #333"
-        >
+        <h2 class="text-h3 mb-6 text-center font-weight-bold" style="color: #333">
           Get In Touch
         </h2>
         <v-row justify="center">
@@ -260,6 +238,77 @@
   </v-app>
 </template>
 
+<script>
+import { nextTick } from "vue";
+import Typed from "typed.js";
+import ScrollReveal from "scrollreveal";
+
+export default {
+  name: "App",
+
+  mounted() {
+    // Wait for the DOM to finish updating with Vue's `nextTick`
+    nextTick(() => {
+      const element = document.querySelector(".typing");
+      if (element) {
+        // Typed.js for typing animations
+        new Typed(".typing", {
+          strings: [
+            "Full Stack Developer",
+            "Project Manager",
+            "Software Engineer",
+            "Web Designer",
+          ],
+          loop: true,
+          typeSpeed: 120,
+          backSpeed: 80,
+          backDelay: 2000,
+        });
+      } else {
+        console.error("Element with class 'typing' not found.");
+      }
+    });
+
+    /* ----- ## -- SCROLL REVEAL ANIMATION -- ## ----- */
+    const sr = ScrollReveal({
+      origin: "top",
+      distance: "80px",
+      duration: 2000,
+      reset: true,
+    });
+
+    sr.reveal("#home", { delay: 100 });
+    sr.reveal("#projects", { delay: 200 });
+    sr.reveal("#testimonials", { delay: 100 });
+    sr.reveal(".testimonial", { delay: 250 });
+    sr.reveal(".testimonial-card", { delay: 400 });
+    sr.reveal(".techt", { delay: 200 });
+    sr.reveal(".wow", { delay: 200 });
+
+    const srLeft = ScrollReveal({
+      origin: "left",
+      distance: "80px",
+      duration: 2000,
+      reset: true,
+    });
+
+    srLeft.reveal(".techmagic", { delay: 350 });
+    srLeft.reveal(".techmagic1", { delay: 550 });
+    srLeft.reveal(".testimonial-head", { delay: 550 });
+    srLeft.reveal(".testimonial-feedback", { delay: 750 });
+
+    const srRight = ScrollReveal({
+      origin: "bottom",
+      distance: "80px",
+      duration: 2000,
+      reset: true,
+    });
+
+    srRight.reveal("#contact", { delay: 200 });
+  },
+};
+</script>
+
 <script setup>
 import { ref } from "vue";
 import daveImage from "@/IMG/dave1.jpg";
@@ -283,8 +332,7 @@ const skills = [
   {
     name: "Java",
     icon: "mdi-language-java",
-    description:
-      "Enterprise-level application development and Android app creation",
+    description: "Enterprise-level application development and Android app creation",
   },
   {
     name: "HTML",
@@ -357,6 +405,11 @@ const projects = [
 </script>
 
 <style scoped>
+.typing-h5 {
+  font-size: 1.25rem; /* Match h5 size */
+  font-weight: 500; /* Semi-bold to align with h5 styling */
+}
+
 .v-card {
   transition: all 0.3s ease-in-out;
 }
@@ -380,6 +433,19 @@ const projects = [
 
 .testimonial-card:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px); /* Adjust this value for the desired "raise" effect */
+  }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
 }
 
 /* Scrollbar Styles */
