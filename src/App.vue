@@ -440,7 +440,7 @@ const projects = [
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-5px); /* Adjust this value for the desired "raise" effect */
+    transform: translateY(-8px); /* Adjust this value for the desired "raise" effect */
   }
 }
 
