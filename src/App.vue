@@ -6,7 +6,9 @@
         @click="drawer = !drawer"
         class="d-flex d-sm-none"
       ></v-app-bar-nav-icon>
-      <v-app-bar-title class="text-h5 font-weight-bold">Dave Salte</v-app-bar-title>
+      <v-app-bar-title class="text-h5 font-weight-bold"
+        >Dave Salte</v-app-bar-title
+      >
       <v-spacer></v-spacer>
       <v-btn
         v-for="item in menuItems"
@@ -83,7 +85,13 @@
           Technical Expertise
         </h2>
         <v-row>
-          <v-col v-for="skill in skills" :key="skill.name" cols="12" sm="6" md="4">
+          <v-col
+            v-for="skill in skills"
+            :key="skill.name"
+            cols="12"
+            sm="6"
+            md="4"
+          >
             <v-hover v-slot="{ isHovering, props }">
               <v-card
                 v-bind="props"
@@ -129,11 +137,18 @@
               <v-card-text>
                 <v-row no-gutters align="center" class="mb-4 testimonial-head">
                   <v-avatar size="48" class="mr-4">
-                    <v-img :src="testimonial.avatar" :alt="testimonial.name"></v-img>
+                    <v-img
+                      :src="testimonial.avatar"
+                      :alt="testimonial.name"
+                    ></v-img>
                   </v-avatar>
-                  <v-card-title class="text-h6 pa-0">{{ testimonial.name }}</v-card-title>
+                  <v-card-title class="text-h6 pa-0">{{
+                    testimonial.name
+                  }}</v-card-title>
                 </v-row>
-                <v-card-text class="text-body-1 font-italic testimonial-feedback">
+                <v-card-text
+                  class="text-body-1 font-italic testimonial-feedback"
+                >
                   "{{ testimonial.feedback }}"
                 </v-card-text>
               </v-card-text>
@@ -143,17 +158,35 @@
       </v-container>
 
       <!-- Projects Section -->
-      <v-container id="projects" class="py-12" style="background-color: #fdf5e6">
-        <h2 class="text-h3 mb-6 text-center font-weight-bold mt-8" style="color: #333">
+      <v-container
+        id="projects"
+        class="py-12"
+        style="background-color: #fdf5e6"
+      >
+        <h2
+          class="text-h3 mb-6 text-center font-weight-bold mt-8"
+          style="color: #333"
+        >
           Featured Projects
         </h2>
         <v-row>
-          <v-col v-for="project in projects" :key="project.title" cols="12" md="6">
+          <v-col
+            v-for="project in projects"
+            :key="project.title"
+            cols="12"
+            md="6"
+          >
             <v-hover v-slot="{ isHovering, props }">
-              <v-card v-bind="props" :elevation="isHovering ? 12 : 2" height="100%">
+              <v-card
+                v-bind="props"
+                :elevation="isHovering ? 12 : 2"
+                height="100%"
+              >
                 <v-img :src="project.image" height="250" cover></v-img>
                 <v-card-title class="text-h5">{{ project.title }}</v-card-title>
-                <v-card-text class="text-body-1">{{ project.description }}</v-card-text>
+                <v-card-text class="text-body-1">{{
+                  project.description
+                }}</v-card-text>
                 <v-card-text>
                   <v-chip
                     v-for="tech in project.technologies"
@@ -184,7 +217,10 @@
 
       <!-- Contact Section -->
       <v-container id="contact" class="py-12">
-        <h2 class="text-h3 mb-6 text-center font-weight-bold" style="color: #333">
+        <h2
+          class="text-h3 mb-6 text-center font-weight-bold"
+          style="color: #333"
+        >
           Get In Touch
         </h2>
         <v-row justify="center">
@@ -318,6 +354,8 @@ import billy1 from "@/IMG/billy1.jpg";
 import andre1 from "@/IMG/andre1.jpg";
 import kurt1 from "@/IMG/kurt1.jpg";
 import aedrian1 from "@/IMG/aedrian1.jpg";
+import authen from "@/IMG/Authen.jpg";
+import weatherapp from "@/IMG/weatherApp.jpg";
 
 const drawer = ref(false);
 
@@ -332,7 +370,8 @@ const skills = [
   {
     name: "Java",
     icon: "mdi-language-java",
-    description: "Enterprise-level application development and Android app creation",
+    description:
+      "Enterprise-level application development and Android app creation",
   },
   {
     name: "HTML",
@@ -390,7 +429,7 @@ const projects = [
     description:
       "A full-stack e-commerce solution with a responsive front-end and robust back-end",
     image: amazonImg,
-    link: "#",
+    link: "https://www.amazon.com/",
     technologies: ["Vue.js", "Vuetify", "Java Spring Boot", "MySQL"],
   },
   {
@@ -398,7 +437,23 @@ const projects = [
     description:
       "An intuitive task management application with real-time updates and team collaboration features",
     image: taskManagementImg,
-    link: "#",
+    link: "https://asana.com/uses/task-management",
+    technologies: ["Vue.js", "Vuetify", "Node.js", "MongoDB"],
+  },
+  {
+    title: "Weather App",
+    description:
+      "An intuitive task management application with real-time updates and team collaboration features",
+    image: weatherapp,
+    link: "https://weather-app-eta-seven-74.vercel.app/",
+    technologies: ["Vue.js", "Vuetify", "Node.js", "MongoDB"],
+  },
+  {
+    title: "Authentication App",
+    description:
+      "An intuitive task management application with real-time updates and team collaboration features",
+    image: authen,
+    link: "https://authentication-app-xi.vercel.app/",
     technologies: ["Vue.js", "Vuetify", "Node.js", "MongoDB"],
   },
 ];
@@ -440,7 +495,9 @@ const projects = [
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-8px); /* Adjust this value for the desired "raise" effect */
+    transform: translateY(
+      -8px
+    ); /* Adjust this value for the desired "raise" effect */
   }
 }
 
